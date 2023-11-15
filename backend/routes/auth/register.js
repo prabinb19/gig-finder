@@ -5,7 +5,7 @@ const verifyToken = require("../../utils/verifyToken");
 const router = express.Router();
 
 // Register route
-router.post("/", verifyToken, async (req, res, next) => {
+router.post("/",  async (req, res, next) => {
   try {
     const { email, password, role, first_name, last_name, phone_number} =
       req.body;

@@ -1,6 +1,6 @@
 const express = require("express");
-const verifyToken = require("../utils/verifyToken");
-const { getUserData } = require("../models/User");
+const verifyToken = require("../../utils/verifyToken");
+const { getUserData } = require("../../models/User");
 
 const router = express.Router();
 
@@ -26,7 +26,7 @@ router.post("/", verifyToken, async (req, res, next) => {
   }
 });
 
-const keysToCopy = ["is_admin", "department", "first_name", "last_name"];
+const keysToCopy = ["email", "phone_number", "first_name", "last_name"];
 const getUserFormattedData = (user) => {
   try {
     const formatted_user_data = Object.fromEntries(
