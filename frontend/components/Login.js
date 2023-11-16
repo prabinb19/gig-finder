@@ -50,9 +50,21 @@ export default function Login() {
     <Box sx={login_style.outer_box}>
       <Box sx={login_style.inner_box}>
         {/* Uni Logo */}
-        <Box sx={login_style.uni_logo_box}>
-          <Image src={Logo} alt="Logo of USM" width={200} height={200} />
+        <Box
+          sx={{
+            borderRadius: "100%",
+            overflow: "hidden",
+            width: 150,
+            height: 150,
+            marginBottom: "20px",
+            marginLeft: "120px",
+          }}
+        >
+          <Image src={Logo} alt="Logo of USM" width={150} height={150} />
         </Box>
+        <p style={{ marginLeft: "120px", marginBottom: "10px" }}>
+          Your Skill, Their Need
+        </p>
 
         {/* Title */}
 

@@ -1,56 +1,78 @@
-import { Box, Typography, Grid } from "@mui/material";
-import { useState } from "react";
-import {
-  Mail as EmailIcon,
-  GitHub as GitHubIcon,
-  LinkedIn as LinkedInIcon,
-} from "@mui/icons-material";
-import Link from "next/link";
-import { APP_TITLE } from "../config/conf";
+import React from "react";
+import styles from "../styles/Home.module.css";
 
-export default function Home() {
+const HomePage = () => {
   return (
-    <Box textAlign="center" mt={10}>
-      {/* Gradient Stripe */}
-      <Box
-        sx={{
-          backgroundImage: "linear-gradient(to right, #00bcd4, #4caf50)",
-          height: "150px",
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-        }}
-      />
+    <div className={styles.container}>
+      <header>
+        <h1>Gig Explorer</h1>
+        <p>Connect. Offer. Succeed.</p>
+        <button>Add My Talent</button>
+      </header>
 
-      {/* Page Title */}
-      <Typography variant="h2" style={{ marginBottom: "40px" }}>
-        {APP_TITLE}
-      </Typography>
+      <div className={styles["filter-section"]}>
+        <div className={styles.filter}>
+          <h2>Filter</h2>
+          <div className="filter-options">
+            <div className="location-filter">
+              <label>
+                <input type="checkbox" /> On-Campus
+              </label>
+              <label>
+                <input type="checkbox" /> Off-Campus
+              </label>
+            </div>
+            <div className="service-filter">
+              <label>
+                <input type="checkbox" /> Tutoring
+              </label>
+              <label>
+                <input type="checkbox" /> Hair Cutting
+              </label>
+              <label>
+                <input type="checkbox" /> Nail Polishing
+              </label>
+            </div>
+            <div className="price-filter">
+              <label>
+                <input type="radio" name="price" /> Less than $10
+              </label>
+              <label>
+                <input type="radio" name="price" /> $10 - $30
+              </label>
+              <label>
+                <input type="radio" name="price" /> More than $30
+              </label>
+            </div>
+          </div>
+        </div>
 
-      {/* Welcome Message */}
-      <Typography variant="h4" style={{ margin: "200px 0" }}>
-        Trending Gigs Near You
-      </Typography>
+        <div className={styles["search-section"]}>
+          <input type="text" placeholder="Search..." />
+          <button>Find help</button>
+        </div>
+      </div>
 
-      {/* Additional content (e.g., social media icons) */}
-      <Grid container justifyContent="center" spacing={2}>
-        <Grid item>
-          <EmailIcon />
-        </Grid>
-        <Grid item>
-          <GitHubIcon />
-        </Grid>
-        <Grid item>
-          <LinkedInIcon />
-        </Grid>
-      </Grid>
-
-      {/* Navigation Link */}
-      <Box style={{ marginTop: 20 }}>
-        {/* Replace '/dashboard' with the actual path to your dashboard page */}
-        <Link href="/login">Go to Login</Link>
-      </Box>
-    </Box>
+      <div className={styles["gig-list"]}>
+        {/* Map over your gigs data and render Gig components */}
+        <Gig
+          title="Product Designer"
+          description="Designing Tomorrow, Crafting Today"
+        />
+        {/* ... other gigs */}
+      </div>
+    </div>
   );
-}
+};
+
+const Gig = ({ title, description }) => {
+  return (
+    <div className={styles.gig}>
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <button>Hire Me</button>
+    </div>
+  );
+};
+
+export default HomePage;
