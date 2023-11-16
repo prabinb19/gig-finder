@@ -1,0 +1,33 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-section {
+  display: flex;
+}
+
+.filter {
+  flex: 1;
+}
+
+.search-section {
+  flex: 2;
+}
+
+.gig-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.gig {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
