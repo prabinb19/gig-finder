@@ -51,12 +51,7 @@ export default function Login() {
       <Box sx={login_style.inner_box}>
         {/* Uni Logo */}
         <Box sx={login_style.uni_logo_box}>
-          <Image
-            src={Logo}
-            alt="Logo of USM"
-            width={200}
-            height={200}
-          />
+          <Image src={Logo} alt="Logo of USM" width={200} height={200} />
         </Box>
 
         {/* Title */}
