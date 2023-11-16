@@ -5,13 +5,13 @@ import { createTheme } from "@mui/material";
 // import RobotoMono from "../fonts/RobotoMono-VariableFont_wght.ttf";
 import localFont from "next/font/local";
 
-export const BoldFont = localFont({ src: "../fonts/Roboto-Bold.ttf" });
-export const MediumFont = localFont({ src: "../fonts/Montserrat-Medium.ttf" });
+export const BoldFont = localFont({ src: "../fonts/OpenSans-ExtraBold.ttf" });
+export const MediumFont = localFont({ src: "../fonts/OpenSans-Medium.ttf" });
 export const RegularFont = localFont({
-  src: "../fonts/Montserrat-Regular.ttf",
+  src: "../fonts/OpenSans-Regular.ttf",
 });
 export const SemiBoldFont = localFont({
-  src: "../fonts/Montserrat-Bold.ttf",
+  src: "../fonts/OpenSans-Bold.ttf",
 });
 
 const h_big_style = { fontFamily: BoldFont.style.fontFamily };
@@ -27,14 +27,15 @@ const theme = createTheme({
     h6: h_small_style,
     button: {
       fontFamily: SemiBoldFont.style.fontFamily,
+      color: "#333333",
     },
   },
   palette: {
     primary: {
-      main: "#ffd046",
+      main: "#3498db",
     },
     secondary: {
-      main: "#000",
+      main: "#95a5a6",
     },
   },
 });
